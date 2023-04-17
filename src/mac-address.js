@@ -16,8 +16,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 const isMAC48Address = (n) => {
   const elements = [ 'A', 'B', 'C', 'D', 'E', 'F', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  const arr = n.split('').filter((it) => it !== '-' && elements.includes(it));
-  return arr.length === 12;
+  return ([...n].filter((it) => it !== '-' && elements.includes(it))).length === 12;
 }
 module.exports = {
   isMAC48Address
